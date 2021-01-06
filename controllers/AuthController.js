@@ -1,4 +1,4 @@
-const User = require('../model/User');
+const Admin = require('../model/Admin');
 
 const bcrypt = require('bcryptjs');
 const jwt = require("jsonwebtoken");
@@ -8,27 +8,6 @@ const Joi = require('@hapi/joi');
 exports.register = async(req,res,next)=>
 {
     
-
-    //Validate USER DATA Before SUBMIT
-   
-    // const schema = Joi.object({ 
-    //     firstName: Joi.string().min(4).max(20).required(),
-    //     lastName: Joi.string().min(4).max(20).required(),
-    //     contactNo: Joi.string().min(4).max(50).required(),
-    //     signature: Joi.string().min(4).max(50).required(),
-    //     econcent: Joi.boolean(),
-    //     corporateHierarchy: Joi.string().min(4).max(50).required(),
-    //     address: Joi.string().min(4).max(100).required(),
-    //     country: Joi.string().min(4).required(),        
-    //     companyName: Joi.string().min(4).required(),
-    //     websiteUrl: Joi.string().min(4).required(),
-    //     email: Joi.string().min(8).required(),
-    //     password: Joi.string().min(8).required()
-    // });
-    
-    // const {error} = schema.validate(req.body);
-    
-    // if (error) return res.status(400).send(error.details[0].message);
 
     //Check if email already on Database
 
@@ -45,14 +24,6 @@ exports.register = async(req,res,next)=>
    const user = new User({
     firstName: req.body.firstName,
     lastName: req.body.lastName,
-    signature:req.body.signature,
-    econcent:req.body.econcent,
-    corporateHierarchy:req.body.corporateHierarchy,
-    address:req.body.address,
-    contactNo:req.body.contactNo,
-    country: req.body.country,
-    companyName: req.body.companyName,
-    websiteUrl: req.body.websiteUrl,
     email: req.body.email,    
     password:hashedPassword
 });
