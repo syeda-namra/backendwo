@@ -63,7 +63,8 @@ exports.addAdmin= async(req,res,next)=>{
              //Create and assign jwt tokken
             //  const token = jwt.sign({_id: user._id}, process.env.TOKEN_SECRET);
             //  res.header('auth-token',token).send(token);
-            res.send(admin+'Admin logged in');
+            res.send(admin);
+            // res.status(200).send("user logged in");
              next();
             
         }    
