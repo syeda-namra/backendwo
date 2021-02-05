@@ -16,7 +16,7 @@ exports.getdrivercount = async(req,res,next)=>{
     .json({count:inf.length});
 }
 exports.getalldrivers=async(req , res)=> {
-    driver.find({}).then(function (driver) {
+    drivers.find({}).then(function (driver) {
     res.send(driver);
     console.log(driver);
     });
