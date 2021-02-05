@@ -3,7 +3,7 @@ const userProfile = require('../model/userProfile');
 const User=require('../model/User');
 const driver = require('../model/driver');
 const Admin = require('../model/Admin');
-
+const carpool = require('../model/carpool');
 
 
 const { Router } = require('express');
@@ -11,6 +11,7 @@ const AuthController = require("../controllers/AuthController");
 const UserprofileController=require("../controllers/UserprofileController");
 const DriverController=require("../controllers/DriverController");
 const AdminController= require("../controllers/AdminController");
+const CarpoolController= require("../controllers/CarpoolController");
 
 //const registerValidation = require('../validation');
 
@@ -44,6 +45,12 @@ router.put('/edit/:id',AuthController.edit);
 router.get('/userGet/:id',AuthController.userGet);
 //get all users data//
 router.get('/userlist',AuthController.allusersGet);
+
+
+
+//**************get all car pools************************** */
+
+router.get('/carpools',CarpoolController.getallpools);
 
 //**************************************Company user ends here**************************************//
 
