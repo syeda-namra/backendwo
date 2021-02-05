@@ -15,3 +15,9 @@ exports.getdrivercount = async(req,res,next)=>{
     .status(200)
     .json({count:inf.length});
 }
+exports.getalldrivers=async(req , res)=> {
+    carpool.find({}).then(function (driver) {
+    res.send(driver);
+    console.log(driver);
+    });
+   }

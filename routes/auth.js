@@ -24,6 +24,7 @@ router.get('/getprofilecount',UserprofileController.getprofilecount);
 //***********************************Company routes start**********************/    
 //get****** driver controllers**********************//
 router.get('/getdrivercount',DriverController.getdrivercount);
+router.get('/getalldriver',DriverController.getalldrivers);
 //================
 //register new user
 router.post('/register',AuthController.register);
